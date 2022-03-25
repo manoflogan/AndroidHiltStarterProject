@@ -8,6 +8,6 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "words")
 data class Word(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     val word: String
 )
