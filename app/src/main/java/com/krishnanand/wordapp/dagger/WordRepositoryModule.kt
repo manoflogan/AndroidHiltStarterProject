@@ -1,5 +1,7 @@
 package com.krishnanand.wordapp.dagger
 
+import com.krishnanand.wordapp.repository.CoroutineDispatchers
+import com.krishnanand.wordapp.repository.CoroutineDispatchersImpl
 import com.krishnanand.wordapp.repository.WordRepository
 import com.krishnanand.wordapp.repository.WordRepositoryImpl
 import dagger.Binds
@@ -13,4 +15,7 @@ abstract class WordRepositoryModule {
 
     @Binds
     abstract fun bindWeatherRepository(instance: WordRepositoryImpl): WordRepository
+
+    @Binds
+    abstract fun bindCoroutineDispatchers(instance: CoroutineDispatchersImpl): CoroutineDispatchers
 }

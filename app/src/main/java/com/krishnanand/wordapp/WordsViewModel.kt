@@ -18,13 +18,14 @@ class WordsViewModel @Inject constructor(
     private val _wordsListFlow: MutableStateFlow<List<Word>> = MutableStateFlow(mutableListOf())
     val wordListFlow: StateFlow<List<Word>>
         get() = _wordsListFlow
-    private val _insertUpdate = MutableStateFlow(0)
-    val insertUpdate: StateFlow<Int>
+    private val _insertUpdate = MutableStateFlow<Long>(0)
+    val insertUpdate: StateFlow<Long>
         get() = _insertUpdate
 
     fun saveWord(word: String) {
         viewModelScope.launch {
-            wordRepository.insertWord(Word(0, word))
+            val rowsUpdated = wordRepository.insertWord(Word(0, word))
+            _insertUpdate.value = rowsUpdated
         }
     }
 
