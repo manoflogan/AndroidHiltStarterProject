@@ -49,7 +49,7 @@ class WordActivity : AppCompatActivity() {
                         if (insertCount > 0) {
                             Snackbar.make(
                                 activityWordBinding.root,
-                                getString(R.string.word_added, insertCount),
+                                resources.getQuantityString(R.plurals.words_added, insertCount.toInt(), insertCount),
                                 Snackbar.LENGTH_LONG
                             ).show()
                         }

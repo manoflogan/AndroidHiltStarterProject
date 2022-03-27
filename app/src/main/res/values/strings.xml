@@ -2,5 +2,8 @@
     <string name="app_name">WordApp</string>
     <string name="add">Add</string>
     <string name="submit">Submit</string>
-    <string name="word_added">%1$d word was added</string>
+    <plurals name="words_added">
+        <item quantity="one">%d word has been added</item>
+        <item quantity="other">%d words have been added</item>
+    </plurals>
 </resources>

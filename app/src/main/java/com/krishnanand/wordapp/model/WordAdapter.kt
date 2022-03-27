@@ -9,16 +9,14 @@ import com.krishnanand.wordapp.databinding.WordItemBinding
 
 class WordAdapter: ListAdapter<Word, WordViewHolder>(DiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
-        val viewHolder = WordViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder =
+        WordViewHolder(
             WordItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
-        return viewHolder
-    }
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         holder.bind(getItem(position))
