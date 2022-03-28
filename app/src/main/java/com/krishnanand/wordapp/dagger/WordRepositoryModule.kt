@@ -14,7 +14,7 @@ import dagger.hilt.android.components.ViewModelComponent
 abstract class WordRepositoryModule {
 
     @Binds
-    abstract fun bindWeatherRepository(instance: WordRepositoryImpl): WordRepository
+    abstract fun bindWordRepository(instance: WordRepositoryImpl): WordRepository
 
     @Binds
     abstract fun bindCoroutineDispatchers(instance: CoroutineDispatchersImpl): CoroutineDispatchers
